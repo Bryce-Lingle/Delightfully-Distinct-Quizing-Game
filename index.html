@@ -4,13 +4,48 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel ="stylesheet" href="assets/style.css"
+    <link rel ="stylesheet" href="assets/style.css">
 
     <title>Fun Coding Quiz</title>
 </head>
-<body>
-    
 
+<body>
+   <!-- This is the starting page. This is what they will see until they press the next button.
+
+   
+    <header>
+        <h1>This is the start of the quiz</h1>
+    </header>
+            <p>
+                This is a quiz that tests your overall understadning of code. You will be presented with multiple choice questions that all pertain to coding. You will have 5 minutes to get as many questions correct as you can. 
+                <br>
+            </p>You know what you know, so go and show how amazing you are.
+            <br>
+        <button type="button">START</button>
+    --> 
+
+    <!-- This is the question card layout. -->
+    <div class = "timer-container" id="timer">This is the timer</div>
+    <div class = "question-container" id="question">
+        This is where my question goes
+    </div>
+    <div class = "options-container">
+        <ul>
+            <li><button class="option" onclick="" id="op1">Option1</button></li>
+            <li><button class="option" onclick="" id="op2">Option2</button></li>
+            <li><button class="option" onclick="" id="op3">Option3</button></li>
+            <li><button class="option" onclick="" id="op4">Option4</button></li>
+            <li><button class="option" onclick="" id="op5">Option5</button></li>
+        </ul>
+    </div>
+
+    <!-- This is the button that will take the user to the next question.-->
+    <div class = "navigation">
+        <button class = "next">Next</button>
+    </div>
+
+
+    
  <script src="assets/script.js"></script>   
 </body>
 </html>
