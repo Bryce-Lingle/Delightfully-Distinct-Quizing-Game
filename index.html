@@ -4,46 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@600&display=swap" rel="stylesheet">
     <link rel ="stylesheet" href="assets/style.css">
 
     <title>Fun Coding Quiz</title>
 </head>
 
 <body>
-   <!-- This is the starting page. This is what they will see until they press the next button.
+<div class="container">
+    <div id="question-container"></div>
+    <div id="question">This is my question</div>
+    <div id="answer-container"></div>
+        <button id="answer">Answer 1</button>
+        <button id="answer">Answer 2</button>
+        <button id="answer">Answer 3</button>
+        <button id="answer">Answer 4</button>
+    
 
-   
-    <header>
-        <h1>This is the start of the quiz</h1>
-    </header>
-            <p>
-                This is a quiz that tests your overall understadning of code. You will be presented with multiple choice questions that all pertain to coding. You will have 5 minutes to get as many questions correct as you can. 
-                <br>
-            </p>You know what you know, so go and show how amazing you are.
-            <br>
-        <button type="button">START</button>
-    --> 
+</div>
+<div class="navigation">
+    <button id="start-game-button" class="start-game-button-btn">START</button>
+    <button id="next-question" class="next-question-button-btn">NEXT</button>
 
-    <!-- This is the question card layout. -->
-    <div class = "timer-container" id="timer">This is the timer</div>
-    <div class = "question-container" id="question">
-        This is where my question goes
-    </div>
-    <div class = "options-container">
-        <ul>
-            <li><button class="option" onclick="" id="op1">Option1</button></li>
-            <li><button class="option" onclick="" id="op2">Option2</button></li>
-            <li><button class="option" onclick="" id="op3">Option3</button></li>
-            <li><button class="option" onclick="" id="op4">Option4</button></li>
-        </ul>
-    </div>
-
-    <!-- This is the button that will take the user to the next question.-->
-    <div class = "navigation">
-        <button class = "next">Next</button>
-    </div>
-
-
+</div>
     
  <script src="assets/script.js"></script>   
 </body>
