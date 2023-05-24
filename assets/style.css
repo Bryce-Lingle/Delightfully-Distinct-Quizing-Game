@@ -11,6 +11,20 @@ body{
     justify-content:center;
     align-items: center;
     height: 100vh;
-    width: 100vh;
+    width: 100vw;
 }
 
+.container{
+    background-color: rgb(228, 229, 231);
+    border: solid;
+    border-color: black;
+    border-radius: 40px;
+    width: 750px;
+    max-width: 75%;
+    height: 750px;
+    max-height: 75%;
+    text-align: center;
+    justify-content: center;
+    padding: 15px;
+    box-shadow: 0  0 15px 5px;
+}
