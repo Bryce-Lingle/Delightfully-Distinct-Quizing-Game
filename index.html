@@ -14,18 +14,20 @@
 
 <body>
 <div class="container">
-    <div id="question-container"></div>
-    <div id="question">This is my question</div>
-    <div id="answer-buttons" class="answer-button-layout">
-        <button class="btn" id="answer">Answer 1</button>
-        <button class="btn" id="answer">Answer 2</button>
-        <button class="btn" id="answer">Answer 3</button>
-        <button class="btn" id="answer">Answer 4</button>
+    <div id="question-container">
+        <div class= description id="description">This is where I will describe the quiz before it hides at the start of the quiz</div>
+        <div id="question" class="hide">This is my question</div>
+        <div id="answer-buttons" class="answer-button-layout hide">
+            <button class="btn" id="answer">Answer 1</button>
+            <button class="btn" id="answer">Answer 2</button>
+            <button class="btn" id="answer">Answer 3</button>
+            <button class="btn" id="answer">Answer 4</button>
+        </div>
     </div>
 
     <div class="navigation">
             <button id="start-game-button" class="start-game-button-btn">START</button>
-            <button id="next-question-button" class="next-question-button-btn">NEXT</button>
+            <button id="next-question-button" class="next-question-button-btn hide">NEXT</button>
     </div>
 
 </div>

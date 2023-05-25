@@ -95,3 +95,23 @@ body.correct{
 #next-question-button:hover{
     background-color: antiquewhite;
 }
+
+.navigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    
+}
+
+.description{
+    display: flex;
+    margin: 20px;
+    text-align: center;
+    justify-content: center;
+    padding:80px
+}
+
+.hide{
+    display:none;
+}
