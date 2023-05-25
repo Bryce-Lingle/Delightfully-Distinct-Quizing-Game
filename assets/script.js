@@ -10,6 +10,7 @@ var onStart= document.getElementById('description')
 var questions= document.getElementById('question')
 var answerButtons = document.getElementById('answer-buttons')
 var nextQuestionButton = document.getElementById('next-question-button')
+var timerDisplay = document.getElementById('timer-container')
 
 startButton.addEventListener('click', startQuiz)
 
@@ -22,9 +23,6 @@ function startQuiz(){
         nextQuestionButton.classList.remove('hide')
       
 
-        
-
-    
 //I need the hide elements to be undone which I will need to research - done
 
 //I need the timer to start
