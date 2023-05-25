@@ -12,6 +12,7 @@ var answerButtons = document.getElementById('answer-buttons')
 var nextQuestionButton = document.getElementById('next-question-button')
 var timerDisplay = document.getElementById('timer-display')
 var timer = 300;
+var currentQuestion
 
 startButton.addEventListener('click', startQuiz)
 
@@ -23,9 +24,10 @@ function startQuiz(){
         answerButtons.classList.remove('hide');
         nextQuestionButton.classList.remove('hide')
         gameStarted= true;
+        nextQuestion()
     
+//This is the function for my timer to count down from 300 seconds  
     renderTimerToBrowser();
-
     function renderTimerToBrowser(){
         var timerDisplay = document.getElementById('timer-display');
 
@@ -39,7 +41,7 @@ function startQuiz(){
                     clearInterval(interval);
                 }
 
-                timerDisplay.textContent="Time Left: " + timer;;
+                timerDisplay.textContent="Time Left: " + timer;
         
             }, 1000);
             }
@@ -53,20 +55,19 @@ function selectAnser(){
 }
 
 function nextQuestion(){
-//I need the browser to randomly select the next questions with answer choices from a math.random 
+
 }
+//I need the browser to randomly select the next questions with answer choices from a math.random 
 
+var questions = [
+    {
+        question: "Who is the coolest person in our family?", 
+        answers: [
+            { text: "me", correct: false},
+            { text: "Morgan", correct: false},
+            { text: "Winnie", correct: false},
+            { text: "Nya", correct: true}
+        ]
+    }
+]
 
-//This is my timer function, it counts down from 300 seconds.//
-function renderTimerToBrowser(){
-    timerDisplay.textContent="Time Left: " + timer;
-
-        setInterval(function() {
-            if(!gameStarted){
-                return;
-            }
-            timer --;
-            renderTimerToBrowser();
-    
-        }, 1000);
-        }
