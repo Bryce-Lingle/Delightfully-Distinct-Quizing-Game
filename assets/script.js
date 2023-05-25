@@ -11,6 +11,7 @@ var questions= document.getElementById('question')
 var answerButtons = document.getElementById('answer-buttons')
 var nextQuestionButton = document.getElementById('next-question-button')
 var timerDisplay = document.getElementById('timer-container')
+var timer = 10;
 
 startButton.addEventListener('click', startQuiz)
 
@@ -21,11 +22,26 @@ function startQuiz(){
         questions.classList.remove('hide');
         answerButtons.classList.remove('hide');
         nextQuestionButton.classList.remove('hide')
+        gameStarted= true;
+    
+    renderTimerToBrowser();
+
+    function renderTimerToBrowser(){
+        timerDisplay.textContent="Time Left: " + timer;
+    
+           var interval = setInterval(function() {
+
+                timer --;
+
+                if (timer <= 0) {
+                    clearInterval(interval);
+                }
+
+                renderTimerToBrowser();
+        
+            }, 1000);
+            }
       
-
-//I need the hide elements to be undone which I will need to research - done
-
-//I need the timer to start
 //I need to be presented with the first question
 
 }
@@ -38,6 +54,17 @@ function nextQuestion(){
 //I need the browser to randomly select the next questions with answer choices from a math.random 
 }
 
-function timer(){
-//I need a timer, I will have to reserach if it goes on its own function or not
-}
+
+//This is my timer function, it counts down from 300 seconds.//
+function renderTimerToBrowser(){
+    timerDisplay.textContent="Time Left: " + timer;
+
+        setInterval(function() {
+            if(!gameStarted){
+                return;
+            }
+            timer --;
+            renderTimerToBrowser();
+    
+        }, 1000);
+        }
