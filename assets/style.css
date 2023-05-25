@@ -88,3 +88,7 @@ body.correct{
    background-color: rgb(73, 187, 187);
 }
 
+#start-game-button:hover{
+    background-color: antiquewhite;
+}
+
