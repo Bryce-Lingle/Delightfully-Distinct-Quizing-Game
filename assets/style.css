@@ -23,8 +23,8 @@ body{
     border-radius: 40px;
     width: 750px;
     max-width: 75%;
-    height: 750px;
-    max-height: 75%;
+    height: 850px;
+    max-height: 85%;
     text-align: center;
     justify-content: center;
     padding: 15px;
@@ -111,6 +111,29 @@ body.correct{
     justify-content: center;
     padding:50px
 }
+
+#timer-container{
+    display:flex;
+    padding: 30px;
+    border: solid;
+    border-color: white;
+    background-color: red;
+    border-radius: 40px;
+    justify-content: center;
+    margin: 30px;
+}
+
+#timer{
+    display: flex;
+    font-size: 25px;
+    color: white;
+    margin:center;
+    text-align: center;
+
+
+
+}
+
 
 .hide{
     display:none;

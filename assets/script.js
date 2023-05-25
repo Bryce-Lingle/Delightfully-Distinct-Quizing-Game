@@ -6,16 +6,27 @@
 //function for cards to randomize on browser load
 
 var startButton = document.getElementById('start-game-button')
-var onstart= document.getElementById('description')
-var questionContainerElement= document.getElementById('question-container')
+var onStart= document.getElementById('description')
+var questions= document.getElementById('question')
+var answerButtons = document.getElementById('answer-buttons')
+var nextQuestionButton = document.getElementById('next-question-button')
 
 startButton.addEventListener('click', startQuiz)
 
 function startQuiz(){
-        console.log("The game is started")
- 
+        console.log("The game is started");
+        startButton.classList.add('hide');
+        onStart.classList.add('hide');
+        questions.classList.remove('hide');
+        answerButtons.classList.remove('hide');
+        nextQuestionButton.classList.remove('hide')
+      
+
+        
+
     
-//I need the hide elements to be undone which I will need to research
+//I need the hide elements to be undone which I will need to research - done
+
 //I need the timer to start
 //I need to be presented with the first question
 
