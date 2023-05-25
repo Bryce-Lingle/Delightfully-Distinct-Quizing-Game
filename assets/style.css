@@ -106,10 +106,10 @@ body.correct{
 
 .description{
     display: flex;
-    margin: 20px;
+    margin: 0px;
     text-align: center;
     justify-content: center;
-    padding:80px
+    padding:50px
 }
 
 .hide{
