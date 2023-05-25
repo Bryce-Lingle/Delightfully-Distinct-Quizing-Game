@@ -3,6 +3,7 @@
     box-sizing: border-box;
 }
 
+/*This is the background and overall page*/
 body{
     background-color: rgb(73, 187, 187);
     display: flex;
@@ -14,6 +15,7 @@ body{
     width: 100vw;
 }
 
+/*This is the container for all my start, next and question buttons. It is displayed white on my page*/
 .container{
     background-color: rgb(228, 229, 231);
     border: solid;
@@ -29,12 +31,60 @@ body{
     box-shadow: 0  0 15px 5px;
 }
 
+/* This is the answer button styling*/
 #answer{
     box-shadow: 0 0 5px 2px;
-    height: 80px;
     border-radius: 10px;
-    padding: 15px;
+    padding: 15px 15px;
     margin: 15px;
     border: solid;
     border-color: white;
 }
+
+/*This is the start button styling*/
+#start-game-button{
+    height: 200px;
+    width: 200px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 5px;
+    color: rgb(0, 188, 0);
+    border-color:white;
+    background-color: rgb(1, 91, 1);
+    font-size: 50px;
+    text-decoration: underline;
+}
+
+/*This is the next button styling*/
+#next-question-button{
+    height: 200px;
+    width: 200px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px 5px;
+    color: rgb(2, 192, 250);
+    border-color:white;
+    background-color: rgb(3, 3, 244);
+    font-size: 50px;
+    text-decoration: underline;
+}
+
+/*This is what the whole pages background is going to do on an incorrect answer, it should turn red*/
+body.incorrect{
+    background-color: red;
+}
+
+/*This is what the whole pages background is going to do on a correct answer, it should turn green*/
+body.correct{
+    background-color: green;
+}
+
+/*This is the overall layout of the answer buttons, I want a single column regardless of the page size*/
+.answer-button-layout{
+    display:grid;
+    margin: 60px;
+}
+
+/* This is what happens to the button color when the mouse hovers over an asnwer box*/
+.btn:hover{
+   background-color: rgb(73, 187, 187);
+}
+
