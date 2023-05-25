@@ -12,7 +12,7 @@ var answerButtons = document.getElementById('answer-buttons')
 var nextQuestionButton = document.getElementById('next-question-button')
 var timerDisplay = document.getElementById('timer-display')
 var timer = 300;
-
+var timerContainer = document.getElementById('timer-container');
 startButton.addEventListener('click', startQuiz)
 
 function startQuiz(){
@@ -23,12 +23,12 @@ function startQuiz(){
         answerButtons.classList.remove('hide');
         nextQuestionButton.classList.remove('hide')
         gameStarted= true;
-    
-//This is the function for my timer to count down from 300 seconds  
+      
     renderTimerToBrowser();
 //This is the function for my timer to count down from 300 seconds
     function renderTimerToBrowser(){
         var timerDisplay = document.getElementById('timer-display');
+        timerContainer.classList.remove('hide');
 
         timerDisplay.textContent="Time Left: " + timer;
     
