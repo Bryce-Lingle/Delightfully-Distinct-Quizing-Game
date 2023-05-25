@@ -10,8 +10,8 @@ var onStart= document.getElementById('description')
 var questions= document.getElementById('question')
 var answerButtons = document.getElementById('answer-buttons')
 var nextQuestionButton = document.getElementById('next-question-button')
-var timerDisplay = document.getElementById('timer-container')
-var timer = 10;
+var timerDisplay = document.getElementById('timer-display')
+var timer = 300;
 
 startButton.addEventListener('click', startQuiz)
 
@@ -27,6 +27,8 @@ function startQuiz(){
     renderTimerToBrowser();
 
     function renderTimerToBrowser(){
+        var timerDisplay = document.getElementById('timer-display');
+
         timerDisplay.textContent="Time Left: " + timer;
     
            var interval = setInterval(function() {
@@ -37,7 +39,7 @@ function startQuiz(){
                     clearInterval(interval);
                 }
 
-                renderTimerToBrowser();
+                timerDisplay.textContent="Time Left: " + timer;;
         
             }, 1000);
             }
