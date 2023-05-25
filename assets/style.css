@@ -92,3 +92,6 @@ body.correct{
     background-color: antiquewhite;
 }
 
+#next-question-button:hover{
+    background-color: antiquewhite;
+}
