@@ -50,7 +50,7 @@ function startQuiz(){
 
                 timer --;
 
-                if (timer <= 0 || currentQuestionIndex>=question.length) {
+                if (timer <= 0 || currentQuestionIndex>=questions.length) {
                     clearInterval(interval);
                     body.innerHTML=''
                    QuizDone() 
