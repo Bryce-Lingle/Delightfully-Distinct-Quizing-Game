@@ -32,7 +32,7 @@ body{
 }
 
 /* This is the answer button styling*/
-#answer{
+.answer{
     box-shadow: 0 0 5px 2px;
     border-radius: 10px;
     padding: 15px 15px;
@@ -40,6 +40,7 @@ body{
     border: solid;
     border-color: white;
 }
+
 
 /*This is the start button styling*/
 #start-game-button{
@@ -134,4 +135,8 @@ body.correct{
 
 .hide{
     display:none;
+}
+
+#you-lose-container{
+
 }
