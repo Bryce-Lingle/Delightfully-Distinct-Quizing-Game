@@ -11,7 +11,7 @@ var question= document.getElementById('question')
 var answerButtons = document.getElementById('answer-buttons')
 var nextQuestionButton = document.getElementById('next-question-button')
 var timerDisplay = document.getElementById('timer-display')
-var timer = 10;
+var timer = 200;
 var timerContainer = document.getElementById('timer-container');
 var youLose = document.getElementById('you-lose-container')
 var currentQuestionIndex= 0
@@ -32,6 +32,7 @@ function startQuiz(){
         question.classList.remove('hide');
         answerButtons.classList.remove('hide');
         nextQuestionButton.classList.remove('hide')
+        scoreCard.classList.remove('hide')
         gameStarted= true;
         scoreCard.textContent=correctAnswers
         nextQuestion()
@@ -67,7 +68,7 @@ function startQuiz(){
 }
 
 function QuizDone(){
-    
+
 }
 
 function selectAnwser(){

@@ -113,20 +113,21 @@ body.correct{
     padding:50px
 }
 
+
 #timer-box{
     display:flex;
-    padding: 30px;
+    padding: 20px;
     border: solid;
     border-color: white;
     background-color: red;
     border-radius: 40px;
     justify-content: center;
-    margin: 30px;
+    margin: 20px;
 }
 
 #timer-display{
     display: flex;
-    font-size: 25px;
+    font-size: 15px;
     color: white;
     margin:center;
     text-align: center;
@@ -137,13 +138,14 @@ body.correct{
     display:none;
 }
 
-#you-lose-container{
-
-}
-
 #correctAnswerScore{
-    width: 100%;
-    font-size: 30px;
+    display: flex;
+    color: white;
+    justify-content: center;
+    background-color: green;
+    border-color: white;
+    border-radius: 40px;
+    margin: 20px;
+    font-size: 20px;
     
-
 }
