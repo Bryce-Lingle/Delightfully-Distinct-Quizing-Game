@@ -4,7 +4,7 @@
 //fucnction for next question
 //function for timer
 //function for cards to randomize on browser load
-
+var body = document.querySelector('body')
 var startButton = document.getElementById('start-game-button')
 var onStart= document.getElementById('description')
 var question= document.getElementById('question')
@@ -16,6 +16,10 @@ var timerContainer = document.getElementById('timer-container');
 var youLose = document.getElementById('you-lose-container')
 var currentQuestionIndex= 0
 var currentSelectedAnswer =''
+var correctAnswers=0
+var scoreCard= document.getElementById('correctAnswerScore')
+
+
 
 var nextButton = document.getElementById('next-question-button')
 
@@ -29,6 +33,7 @@ function startQuiz(){
         answerButtons.classList.remove('hide');
         nextQuestionButton.classList.remove('hide')
         gameStarted= true;
+        scoreCard.textContent=correctAnswers
         nextQuestion()
         
       
@@ -44,19 +49,25 @@ function startQuiz(){
 
                 timer --;
 
-                if (timer <= 0) {
+                if (timer <= 0 || currentQuestionIndex>=question.length) {
                     clearInterval(interval);
-                    youLose.classList.remove('hide');
+                    body.innerHTML=''
+                   QuizDone() 
                 }
                
-
+                
                 timerDisplay.textContent='Time Left: ' + timer;
         
             }, 1000);
             }
+        
       
 //I need to be presented with the first question
 
+}
+
+function QuizDone(){
+    
 }
 
 function selectAnwser(){
@@ -89,15 +100,48 @@ var questions = [
         answers: ['Bryce', 'Morgan', 'Nya', 'Winnie'],
         correctAnswer: 'Winnie'
     },
-
     {
-        question: 'Who is the best dog in the world',
-        answers: [
-            { text: 'Nya', correct: true},
-            { text: 'Morgan', correct: false}
-        ]
-    }
-   
+        question: 'Who is the best dog?',
+        answers: ['Bryce', 'Morgan', 'Nya', 'Winnie'],
+        correctAnswer: 'Nya'
+    },
+    {
+        question: 'Who is an average golfer, but an above average drinker?',
+        answers: ['Bryce', 'Morgan', 'Nya', 'Winnie'],
+        correctAnswer: 'Bryce'
+    },
+    {
+        question: 'Who is best looking in the household?',
+        answers: ['Bryce', 'Morgan', 'Nya', 'Winnie'],
+        correctAnswer: 'Nya'
+    },
+    {
+        question: 'Who is the coolest person in our family?',
+        answers: ['Bryce', 'Morgan', 'Nya', 'Winnie'],
+        correctAnswer: 'Winnie'
+    },
+    {
+        question: 'Who is the coolest person in our family?',
+        answers: ['Bryce', 'Morgan', 'Nya', 'Winnie'],
+        correctAnswer: 'Winnie'
+    },
+    {
+        question: 'Who is the coolest person in our family?',
+        answers: ['Bryce', 'Morgan', 'Nya', 'Winnie'],
+        correctAnswer: 'Winnie'
+    },
+    {
+        question: 'Who is the coolest person in our family?',
+        answers: ['Bryce', 'Morgan', 'Nya', 'Winnie'],
+        correctAnswer: 'Winnie'
+    },
+    {
+        question: 'Who is the coolest person in our family?',
+        answers: ['Bryce', 'Morgan', 'Nya', 'Winnie'],
+        correctAnswer: 'Winnie'
+    },
+
+  
 ]
 
 
@@ -105,11 +149,23 @@ var questions = [
 answerButtons.addEventListener('click', function(event){
     var buttonClicked= event.target
     currentSelectedAnswer=buttonClicked.textContent
+})
+
+nextQuestionButton.addEventListener('click', function(event){
     if(currentSelectedAnswer===questions[currentQuestionIndex].correctAnswer){
-        console.log('correctAnswer')
+     correctAnswers++
+     scoreCard.textContent=correctAnswers
+     currentQuestionIndex++
+     answerButtons.innerHTML=''
+     nextQuestion()
     }
     else{
-        console.log('incorrect answer')
-    }
+    currentQuestionIndex++
+    answerButtons.innerHTML=''
+    nextQuestion()
+  
+    } 
 })
+
+
 

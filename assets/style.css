@@ -140,3 +140,10 @@ body.correct{
 #you-lose-container{
 
 }
+
+#correctAnswerScore{
+    width: 100%;
+    font-size: 30px;
+    
+
+}
