@@ -19,7 +19,7 @@ var currentSelectedAnswer =''
 var correctAnswers=0
 var scoreCard= document.getElementById('correctAnswerScore')
 var scoreBox= document.getElementById('final-scorebox-container')
-
+var gameOver =false;
 
 
 var nextButton = document.getElementById('next-question-button')
@@ -34,10 +34,10 @@ function startQuiz(){
         answerButtons.classList.remove('hide');
         nextQuestionButton.classList.remove('hide')
         scoreCard.classList.remove('hide')
-        gameStarted= true;
         scoreCard.textContent=correctAnswers
         scoreBox.classList.remove('hide')
         nextQuestion()
+        scoreCard.textContent = "Your score = " + correctAnswers;
         
       
     renderTimerToBrowser();
@@ -47,24 +47,21 @@ function startQuiz(){
         timerContainer.classList.remove('hide');
 
         timerDisplay.textContent="Time Left: " + timer;
-    
+        scoreCard.textContent = "Your score =  "
+        scoreCard.textContent = "Your score = " + correctAnswers;
            var interval = setInterval(function() {
 
                 timer --;
-
+                scoreCard.textContent = "Your score = " + correctAnswers;
                 if (timer <= 0 || currentQuestionIndex>=questions.length) {
                     clearInterval(interval);
                     body.innerHTML=''
                 }
                
-                
                 timerDisplay.textContent='Time Left: ' + timer;
-                
+
             }, 1000);
             } 
-
-
-//I need to be presented with the first question
 }
 
 function nextQuestion(){
@@ -162,6 +159,12 @@ function subtractTime(){
     timer -= timeToSubtract;
 }
 
-
+function endGame(){
+    gameOver = true
+             if (timer <= 0 || currentQuestionIndex>=questions.length) {
+            clearInterval(interval);
+            }
+            console.log('you won')
+}
 
 
