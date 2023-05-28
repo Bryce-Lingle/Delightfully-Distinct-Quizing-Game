@@ -81,49 +81,54 @@ function nextQuestion(){
 
 var questions = [
     {
-        question: 'Who is the coolest person in our family?',
-        answers: ['Bryce', 'Morgan', 'Nya', 'Winnie'],
-        correctAnswer: 'Winnie'
+        question: 'How do you comment a single line of code in JS?',
+        answers: ['// comment', '/* comment */', '<!-- comment -->', '# comment'],
+        correctAnswer: '// comment'
     },
     {
-        question: 'Who is the best dog?',
-        answers: ['Bryce', 'Morgan', 'Nya', 'Winnie'],
-        correctAnswer: 'Nya'
+        question: 'How do you access the length of a string in JS?',
+        answers: ['string.size', 'string.length', 'string.count', 'strong.length()'],
+        correctAnswer: 'string.length'
     },
     {
-        question: 'Who is an average golfer, but an above average drinker?',
-        answers: ['Bryce', 'Morgan', 'Nya', 'Winnie'],
-        correctAnswer: 'Bryce'
+        question: 'What does the NaN keyword represent in JS?',
+        answers: ['Numbers are Null', 'Numbers are Negative', 'Not a Number', 'New array Name'],
+        correctAnswer: 'Not a Number'
     },
     {
-        question: 'Who is best looking in the household?',
-        answers: ['Bryce', 'Morgan', 'Nya', 'Winnie'],
-        correctAnswer: 'Nya'
+        question: 'Which method is used to add an element to the end of an array?',
+        answers: ['push()', 'pop()', 'shift()', 'unshift()'],
+        correctAnswer: 'push()'
     },
     {
-        question: 'Who is the coolest person in our family?',
-        answers: ['Bryce', 'Morgan', 'Nya', 'Winnie'],
-        correctAnswer: 'Winnie'
+        question: 'Which CSS property is used to change the text color of an element',
+        answers: ['text-color', 'color', 'font-color', 'text-style'],
+        correctAnswer: 'color'
     },
     {
-        question: 'Who is the coolest person in our family?',
-        answers: ['Bryce', 'Morgan', 'Nya', 'Winnie'],
-        correctAnswer: 'Winnie'
+        question: 'How do you include an external CSS file in an HTML document?',
+        answers: ['<style src="style.css">', '<css src="style.css">', '<link rel="stylesheet" href="style.css">', '<script src="style.css">'],
+        correctAnswer: '<link rel="stylesheet" href="style.css">'
     },
     {
-        question: 'Who is the coolest person in our family?',
-        answers: ['Bryce', 'Morgan', 'Nya', 'Winnie'],
-        correctAnswer: 'Winnie'
+        question: 'How do you change the background color of an element in CSS?',
+        answers: ['background-color', 'background', 'color', 'bgcolor'],
+        correctAnswer: 'background-color'
     },
     {
-        question: 'Who is the coolest person in our family?',
-        answers: ['Bryce', 'Morgan', 'Nya', 'Winnie'],
-        correctAnswer: 'Winnie'
+        question: 'Which CSS property is used to add space between the content and the border of an element?',
+        answers: ['margin', 'padding', 'border-spacing', 'spacing'],
+        correctAnswer: 'padding'
     },
     {
-        question: 'Who is the coolest person in our family?',
-        answers: ['Bryce', 'Morgan', 'Nya', 'Winnie'],
-        correctAnswer: 'Winnie'
+        question: 'How do you center an element horizontally in CSS?',
+        answers: ['postition: center', 'text-align: center', 'float: center', 'margin: auto'],
+        correctAnswer: 'margin: auto'
+    },
+    {
+        question: 'How do you round the corners of a box in CSS?',
+        answers: ['corner-curves:', 'border-left: rounded:', 'border-radius:', 'corners:'],
+        correctAnswer: 'border-radius'
     },
 
   
