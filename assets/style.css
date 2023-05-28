@@ -149,3 +149,18 @@ body.correct{
     font-size: 20px;
     
 }
+
+#final-scorebox-container{
+    background-color: rgb(228, 229, 231);
+    border: solid;
+    border-color: black;
+    border-radius: 40px;
+    width: 750px;
+    max-width: 75%;
+    height: 850px;
+    max-height: 85%;
+    text-align: center;
+    justify-content: center;
+    padding: 15px;
+    box-shadow: 0  0 15px 5px;
+}
