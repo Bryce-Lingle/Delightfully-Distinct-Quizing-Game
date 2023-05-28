@@ -11,7 +11,7 @@ var question= document.getElementById('question')
 var answerButtons = document.getElementById('answer-buttons')
 var nextQuestionButton = document.getElementById('next-question-button')
 var timerDisplay = document.getElementById('timer-display')
-var timer = 60;
+var timer = 90;
 var timerContainer = document.getElementById('timer-container');
 var youLose = document.getElementById('you-lose-container')
 var currentQuestionIndex= 0
@@ -20,6 +20,11 @@ var correctAnswers=0
 var scoreCard= document.getElementById('correctAnswerScore')
 var scoreBox= document.getElementById('final-scorebox-container')
 var gameOver =false;
+var container = document.getElementById('container')
+var yourScoreIs = document.getElementById('yourScoreIs')
+var initialsInput = document.getElementById('initials');
+var saveButton = document.getElementById('saveScoreButton')
+var highScoresList = document.getElementById('highScoresList')
 
 
 var nextButton = document.getElementById('next-question-button')
@@ -36,6 +41,7 @@ function startQuiz(){
         scoreCard.classList.remove('hide')
         scoreCard.textContent=correctAnswers
         scoreBox.classList.remove('hide')
+        scoreBox.classList.add('hide')
         nextQuestion()
         scoreCard.textContent = "Your score = " + correctAnswers;
         
@@ -55,26 +61,77 @@ function startQuiz(){
                 scoreCard.textContent = "Your score = " + correctAnswers;
                 if (timer <= 0 || currentQuestionIndex>=questions.length) {
                     clearInterval(interval);
-                    body.innerHTML=''
+                    container.classList.add('hide');
+                    scoreBox.classList.remove('hide');
+                    yourScoreIs.textContent = 'Your Score Is ' + correctAnswers;
                 }
                
                 timerDisplay.textContent='Time Left: ' + timer;
-
             }, 1000);
             } 
 }
 
 function nextQuestion(){
-      question.textContent=questions[currentQuestionIndex].question;
+    if(currentQuestionIndex>=questions.length){
+        container.classList.add('hide');
+        scoreBox.classList.remove('hide');
+        yourScoreIs.textContent = 'Your Score Is ' + correctAnswers;
+    } else{
+        question.textContent=questions[currentQuestionIndex].question;
 
-      for(var i = 0; i<questions[currentQuestionIndex].answers.length; i++){
-        var choice= document.createElement('button')
-        choice.classList.add('answer')
-        choice.classList.add('btn')
-        choice.textContent=questions[currentQuestionIndex].answers[i]
-        answerButtons.appendChild(choice)
-      }
+        for(var i = 0; i<questions[currentQuestionIndex].answers.length; i++){
+          var choice= document.createElement('button')
+          choice.classList.add('answer')
+          choice.classList.add('btn')
+          choice.textContent=questions[currentQuestionIndex].answers[i]
+          answerButtons.appendChild(choice)
+        }
+    }
 }
+
+function subtractTime(){
+    var timeToSubtract = 5;
+    timer -= timeToSubtract;
+}
+
+function saveHighScore(event){
+    event.preventDefault()
+    var initials = initialsInput.value
+    var highScores = getHighScores()
+    var currentScore = {
+        initials: initials, 
+        score: correctAnswers
+    }
+    highScores.push(currentScore)
+    localStorage.setItem('highScores', JSON.stringify(highScores)) 
+    displayHighScores()
+}
+
+function getHighScores(){
+    var json = localStorage.getItem('highScores');
+    if(json !== null) {
+        var highScores = JSON.parse(json);
+
+        return highScores
+    } else {
+        return [];
+    }
+}
+
+function displayHighScores(){
+    var highScores = getHighScores()
+    for(var i=0; i<highScores.length; i++){
+        var score = document.createElement('li')
+        score.textContent = 'name: ' + highScores[i].initials + 'score: ' + highScores[i].score
+        highScoresList.appendChild(score)
+    }
+}
+
+// make view Highscores button
+// once clicked it should hide the quiz, and end the timer and should remove the hid of scoreList or Scorebox
+// scorebox should not include the save or input field
+
+
 
 var questions = [
     {
@@ -82,51 +139,51 @@ var questions = [
         answers: ['// comment', '/* comment */', '<!-- comment -->', '# comment'],
         correctAnswer: '// comment'
     },
-    {
-        question: 'How do you access the length of a string in JS?',
-        answers: ['string.size', 'string.length', 'string.count', 'strong.length()'],
-        correctAnswer: 'string.length'
-    },
-    {
-        question: 'What does the NaN keyword represent in JS?',
-        answers: ['Numbers are Null', 'Numbers are Negative', 'Not a Number', 'New array Name'],
-        correctAnswer: 'Not a Number'
-    },
-    {
-        question: 'Which method is used to add an element to the end of an array?',
-        answers: ['push()', 'pop()', 'shift()', 'unshift()'],
-        correctAnswer: 'push()'
-    },
-    {
-        question: 'Which CSS property is used to change the text color of an element',
-        answers: ['text-color', 'color', 'font-color', 'text-style'],
-        correctAnswer: 'color'
-    },
-    {
-        question: 'How do you include an external CSS file in an HTML document?',
-        answers: ['<style src="style.css">', '<css src="style.css">', '<link rel="stylesheet" href="style.css">', '<script src="style.css">'],
-        correctAnswer: '<link rel="stylesheet" href="style.css">'
-    },
-    {
-        question: 'How do you change the background color of an element in CSS?',
-        answers: ['background-color', 'background', 'color', 'bgcolor'],
-        correctAnswer: 'background-color'
-    },
-    {
-        question: 'Which CSS property is used to add space between the content and the border of an element?',
-        answers: ['margin', 'padding', 'border-spacing', 'spacing'],
-        correctAnswer: 'padding'
-    },
-    {
-        question: 'How do you center an element horizontally in CSS?',
-        answers: ['postition: center', 'text-align: center', 'float: center', 'margin: auto'],
-        correctAnswer: 'margin: auto'
-    },
-    {
-        question: 'How do you round the corners of a box in CSS?',
-        answers: ['corner-curves:', 'border-left: rounded:', 'border-radius:', 'corners:'],
-        correctAnswer: 'border-radius'
-    },
+    // {
+    //     question: 'How do you access the length of a string in JS?',
+    //     answers: ['string.size', 'string.length', 'string.count', 'strong.length()'],
+    //     correctAnswer: 'string.length'
+    // },
+    // {
+    //     question: 'What does the NaN keyword represent in JS?',
+    //     answers: ['Numbers are Null', 'Numbers are Negative', 'Not a Number', 'New array Name'],
+    //     correctAnswer: 'Not a Number'
+    // },
+    // {
+    //     question: 'Which method is used to add an element to the end of an array?',
+    //     answers: ['push()', 'pop()', 'shift()', 'unshift()'],
+    //     correctAnswer: 'push()'
+    // },
+    // {
+    //     question: 'Which CSS property is used to change the text color of an element',
+    //     answers: ['text-color', 'color', 'font-color', 'text-style'],
+    //     correctAnswer: 'color'
+    // },
+    // {
+    //     question: 'How do you include an external CSS file in an HTML document?',
+    //     answers: ['<style src="style.css">', '<css src="style.css">', '<link rel="stylesheet" href="style.css">', '<script src="style.css">'],
+    //     correctAnswer: '<link rel="stylesheet" href="style.css">'
+    // },
+    // {
+    //     question: 'How do you change the background color of an element in CSS?',
+    //     answers: ['background-color', 'background', 'color', 'bgcolor'],
+    //     correctAnswer: 'background-color'
+    // },
+    // {
+    //     question: 'Which CSS property is used to add space between the content and the border of an element?',
+    //     answers: ['margin', 'padding', 'border-spacing', 'spacing'],
+    //     correctAnswer: 'padding'
+    // },
+    // {
+    //     question: 'How do you center an element horizontally in CSS?',
+    //     answers: ['postition: center', 'text-align: center', 'float: center', 'margin: auto'],
+    //     correctAnswer: 'margin: auto'
+    // },
+    // {
+    //     question: 'How do you round the corners of a box in CSS?',
+    //     answers: ['corner-curves:', 'border-left: rounded:', 'border-radius:', 'corners:'],
+    //     correctAnswer: 'border-radius'
+    // },
 
   
 ]
@@ -154,17 +211,7 @@ nextQuestionButton.addEventListener('click', function(event){
     } 
 })
 
-function subtractTime(){
-    var timeToSubtract = 5;
-    timer -= timeToSubtract;
-}
+saveButton.addEventListener('click',saveHighScore)
 
-function endGame(){
-    gameOver = true
-             if (timer <= 0 || currentQuestionIndex>=questions.length) {
-            clearInterval(interval);
-            }
-            console.log('you won')
-}
 
 

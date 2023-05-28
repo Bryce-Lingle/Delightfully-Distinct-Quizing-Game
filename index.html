@@ -14,7 +14,7 @@
 
 <body>
 
-<div class="container">
+<div class="container" id = 'container'>
     <div class= "description" id="description">This is a quiz for all of the future coders in the world. It will have questions pertaining to HTML, CSS, and JS. You will be timed for 5 minutes. Get as many questions as you can correct in the alloted time. You know what you know, don't be afraid to trust your gut and show it. <br>YOU GOT THIS!</br> </div>
     <div id="question-container">
         <div id="question" class="hide">This is my question</div>
@@ -23,6 +23,7 @@
 
     <div class="navigation">
             <button id="start-game-button" class="start-game-button-btn">START</button>
+            <button 
             <button id="next-question-button" class="next-question-button-btn hide ">NEXT</button>
     </div>
     <div id="timer-container" class= "hide">  
@@ -40,17 +41,17 @@
         <div id="final-scorebox-inner">
             <h2>Highscore Chart</h2>
             <br>
+            <h2 id="yourScoreIs"></h2>
             <br>
-            <form method="POST">
-                <div class="input-group">
-                    <label for="name"> Name :</label>
-                    <input type ="text" name="Name" id="name" placehoder = "Enter Name"/>
-                </div>
-                <br>
+            <div class="input-group">
+                <label for="name"> Name :</label>
+                <input type ="text" name="Name" id="initials" placehoder = "Enter Name"/>
+            </div>
+            <br>
             <button id="saveScoreButton">Save</button>
             </form>
 
-            <ol id="highScores"></ol>
+            <ol id="highScoresList"></ol>
     </div>
 
 </div>
