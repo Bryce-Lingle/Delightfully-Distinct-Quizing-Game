@@ -68,16 +68,6 @@ body{
     text-decoration: underline;
 }
 
-/*This is what the whole pages background is going to do on an incorrect answer, it should turn red*/
-body.incorrect{
-    background-color: red;
-}
-
-/*This is what the whole pages background is going to do on a correct answer, it should turn green*/
-body.correct{
-    background-color: green;
-}
-
 /*This is the overall layout of the answer buttons, I want a single column regardless of the page size*/
 .answer-button-layout{
     display:grid;
@@ -151,6 +141,7 @@ body.correct{
 }
 
 #final-scorebox-container{
+    margin: auto;
     background-color: rgb(228, 229, 231);
     border: solid;
     border-color: black;
@@ -160,8 +151,6 @@ body.correct{
     height: 850px;
     max-height: 85%;
     text-align: center;
-    justify-content: center;
-    padding: 15px;
     box-shadow: 0  0 15px 5px;
 }
 
