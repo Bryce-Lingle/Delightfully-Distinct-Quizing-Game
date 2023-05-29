@@ -25,7 +25,7 @@ var yourScoreIs = document.getElementById('yourScoreIs')
 var initialsInput = document.getElementById('initials');
 var saveButton = document.getElementById('saveScoreButton')
 var highScoresList = document.getElementById('highScoresList')
-
+var initialsGroup = document.getElementById('initials-group')
 
 var nextButton = document.getElementById('next-question-button')
 
@@ -105,6 +105,8 @@ function saveHighScore(event){
     highScores.push(currentScore)
     localStorage.setItem('highScores', JSON.stringify(highScores)) 
     displayHighScores()
+    initialsGroup.classList.add('hide')
+    saveButton.classList.add('hide')
 }
 
 function getHighScores(){
@@ -139,21 +141,21 @@ var questions = [
         answers: ['// comment', '/* comment */', '<!-- comment -->', '# comment'],
         correctAnswer: '// comment'
     },
-    // {
-    //     question: 'How do you access the length of a string in JS?',
-    //     answers: ['string.size', 'string.length', 'string.count', 'strong.length()'],
-    //     correctAnswer: 'string.length'
-    // },
-    // {
-    //     question: 'What does the NaN keyword represent in JS?',
-    //     answers: ['Numbers are Null', 'Numbers are Negative', 'Not a Number', 'New array Name'],
-    //     correctAnswer: 'Not a Number'
-    // },
-    // {
-    //     question: 'Which method is used to add an element to the end of an array?',
-    //     answers: ['push()', 'pop()', 'shift()', 'unshift()'],
-    //     correctAnswer: 'push()'
-    // },
+    {
+         question: 'How do you access the length of a string in JS?',
+         answers: ['string.size', 'string.length', 'string.count', 'strong.length()'],
+         correctAnswer: 'string.length'
+    },
+    {
+         question: 'What does the NaN keyword represent in JS?',
+         answers: ['Numbers are Null', 'Numbers are Negative', 'Not a Number', 'New array Name'],
+         correctAnswer: 'Not a Number'
+    },
+    {
+        question: 'Which method is used to add an element to the end of an array?',
+        answers: ['push()', 'pop()', 'shift()', 'unshift()'],
+        correctAnswer: 'push()'
+    },
     // {
     //     question: 'Which CSS property is used to change the text color of an element',
     //     answers: ['text-color', 'color', 'font-color', 'text-style'],
