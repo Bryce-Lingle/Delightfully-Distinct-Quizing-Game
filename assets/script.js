@@ -1,9 +1,3 @@
-//What do I need? 
-//function for starting
-//function for selecting the answer
-//fucnction for next question
-//function for timer
-//function for cards to randomize on browser load
 var body = document.querySelector('body')
 var startButton = document.getElementById('start-game-button')
 var onStart= document.getElementById('description')
@@ -26,11 +20,13 @@ var initialsInput = document.getElementById('initials');
 var saveButton = document.getElementById('saveScoreButton')
 var highScoresList = document.getElementById('highScoresList')
 var initialsGroup = document.getElementById('initials-group')
+var buttonSeeHighScores = document.getElementById('see-highscores')
 
 var nextButton = document.getElementById('next-question-button')
 
 startButton.addEventListener('click', startQuiz)
 
+//My function for the quiz starting and the elements that will be shown or not
 function startQuiz(){
         console.log("The game is started");
         startButton.classList.add('hide');
@@ -44,10 +40,11 @@ function startQuiz(){
         scoreBox.classList.add('hide')
         nextQuestion()
         scoreCard.textContent = "Your score = " + correctAnswers;
+        buttonSeeHighScores.classList.add('hide')
         
       
     renderTimerToBrowser();
-//This is the function for my timer to count down from 300 seconds
+//This is the function for my timer to count down from 90 seconds
     function renderTimerToBrowser(){
         var timerDisplay = document.getElementById('timer-display');
         timerContainer.classList.remove('hide');
@@ -71,6 +68,7 @@ function startQuiz(){
             } 
 }
 
+//this function call the next 
 function nextQuestion(){
     if(currentQuestionIndex>=questions.length){
         container.classList.add('hide');
@@ -129,11 +127,14 @@ function displayHighScores(){
     }
 }
 
-// make view Highscores button
-// once clicked it should hide the quiz, and end the timer and should remove the hid of scoreList or Scorebox
-// scorebox should not include the save or input field
+function seeHighScores(){
+    container.classList.add('hide');
+    scoreBox.classList.remove('hide');
+    initialsGroup.classList.add('hide')
+    saveButton.classList.add('hide');
 
-
+    displayHighScores()
+}
 
 var questions = [
     {
@@ -214,6 +215,8 @@ nextQuestionButton.addEventListener('click', function(event){
 })
 
 saveButton.addEventListener('click',saveHighScore)
+
+buttonSeeHighScores.addEventListener('click', seeHighScores)
 
 
 
