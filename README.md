@@ -8,7 +8,7 @@ For this assingnment, I created a quiz using my knowledge of JS. The interactive
 This website was created by Bryce Lingle. If you have questions or comments, please feel free to reach out to me at brycealingle@gmail.com. In order to complete this assingment, I accessed Michael Seaman, a TA at UC Berkeley and the Slack Ask-BCS resource in order to complete this task. 
 
 ## Image: 
-./assets/screen Shot 2023-05-27 at 23.33.45.png
+![](assets/OpeningImage.png)
 
 ## Link:
 
